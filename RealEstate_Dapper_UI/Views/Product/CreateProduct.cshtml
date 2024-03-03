@@ -1,0 +1,49 @@
+﻿@model CreateProductDto
+
+@{
+    ViewData["Title"] = "CreateProduct";
+    Layout = "~/Views/Admin/Index.cshtml";
+}
+
+<div class="container-fluid pt-4 px-4">
+    <div class="col-12">
+        <div class="bg-light rounded h-100 p-4">
+            <form method="post">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" asp-for="title" placeholder="İlan Başlığı">
+                    <label for="title">İlan Başlığı</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" asp-for="city" placeholder="İlan Başlığı">
+                    <label for="title">Şehir</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" asp-for="district" placeholder="İlan Başlığı">
+                    <label for="title">İlçe</label>
+                </div>
+                <div class="form-floating mb-3">
+                    @Html.DropDownListFor(x=>x.categoryId, (List<SelectListItem>) ViewBag.categories, new {@class = "form-control" })
+                    @* <input type="text" class="form-control" asp-for="categoryName" placeholder="İlan Başlığı"> *@
+                    <label for="title">Kategori</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" asp-for="price" placeholder="İlan Başlığı">
+                    <label for="title">Fiyat</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" asp-for="type" placeholder="İlan Başlığı">
+                    <label for="title">Tür</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" asp-for="coverimage" placeholder="İlan Başlığı">
+                    <label for="title">Kapak Fotoğrafı</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" rows="5" asp-for="address" placeholder="Adres"></textarea>
+                    <label for="title">Adres</label>
+                </div>
+                <button type="submit" class="btn btn-primary w-100 mb-4">İlan Oluştur</button>
+            </form>
+        </div>
+    </div>
+</div>
